@@ -1,5 +1,3 @@
-# rozbudowany
-
 ## Project setup
 ```
 yarn install
