@@ -1,15 +1,13 @@
 <template>
   <div id="app">
     <HelloWorld msg="Welcome to Your Vue.js App"/>
-    <p>{{ title }}</p>
-    <p>{{ counter}}</p>
-    <button @click="increaseCouner">1++</button>
+     <StoneAndPaper />
     <div class="item">
      <p>Nowe todo: {{newItem}}</p>
       <input type="text" placeholder="" v-model="newItem">
       <button @click="addItem">Dodaj</button>
-    </div> 
 
+     
        <TodoItem 
         v-for="item in items"
         :key="item.id"
@@ -17,16 +15,19 @@
         @removeClicked="removeItem"
         />
 
-
+    </div> 
+    
   </div>
 </template>
 
 <script>
 import TodoItem from './TodoItem.vue'
+import StoneAndPaper from './StoneAndPaper.vue'
 
 export default {
  components:{
-     TodoItem
+     TodoItem,
+     StoneAndPaper
  },
   data() {
     return{
@@ -34,15 +35,12 @@ export default {
      counter: 0,
      newItem: '', 
      items: [
-       { title: 'Klik ', completed: false, id: 1 },
-       { title: 'Klik 2', completed: false, id: 2 }
+       { title: 'Zad 1', completed: false, id: 1 },
+       { title: 'Zad 2', completed: false, id: 2 }
      ]
     }
   },
   methods: {
-  increaseCouner(){
-   this.counter++
-   },
     addItem() {
       this.items.push({
          title: this.newItem,
@@ -61,16 +59,8 @@ export default {
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-.item{
-
+body {
+  background-color: #fff;
 }
 .completed {
   opacity: 0.5;
