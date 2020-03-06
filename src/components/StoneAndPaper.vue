@@ -24,9 +24,9 @@ export default {
      title: 'Kamien papier nożyce ',
      counter: '',
      counterPlayer:'',
-     choice:"",
-     kom:"",
-     pc:"",
+     choice:"Player",
+     kom:"Vs",
+     pc:"Pc",
      pcWin: 0,
      playerWin: 0
     }
@@ -36,21 +36,21 @@ export default {
     this.increaseCouner(),
       this.choice="wybrano kamien", this.counterPlayer = 0,
         this.counter === this.counterPlayer ? this.kom = "Remis" : (
-        this.counter === 2 ? (this.kom= "wygranko", this.playerWin++):(this.kom = "przgranko", this.pcWin++)
+        this.counter === 2 ? (this.kom= "Wygranko", this.playerWin++):(this.kom = "Przgranko", this.pcWin++)
         )
     },
     paper(){
      this.increaseCouner()
       this.choice="wybrano papier", this.counterPlayer = 1,
         this.counter === this.counterPlayer ? this.kom = "Remis" : (
-        this.counter === 0 ? (this.kom= "wygranko", this.playerWin++):(this.kom = "przgranko", this.pcWin++)
+        this.counter === 0 ? (this.kom= "Wygranko", this.playerWin++):(this.kom = "Przgranko", this.pcWin++)
         )
     },
     shears(){
     this.increaseCouner()
       this.choice="wybrano nozyce", this.counterPlayer = 2,
         this.counter === this.counterPlayer ? this.kom = "Remis" : (
-        this.counter === 1 ? (this.kom= "wygranko", this.playerWin++):(this.kom = "przgranko", this.pcWin++)
+        this.counter === 1 ? (this.kom= "Wygranko", this.playerWin++):(this.kom = "Przgranko", this.pcWin++)
         )
     },
     increaseCouner(){
